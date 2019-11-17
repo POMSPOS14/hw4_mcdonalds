@@ -4,9 +4,9 @@ public class FantaModel extends AbstractProductModel {
 
     private int sizeInMl;
 
-    public FantaModel(int id, String name, int price, Category category, int cCalories, int sizeInMl) {
+    public FantaModel(int id, String name, int price, Category category, int kcalories, int sizeInMl) {
 
-        super(id, name, price, category, cCalories);
+        super(id, name, price, category, kcalories);
 
         this.sizeInMl = sizeInMl;
     }
@@ -22,24 +22,11 @@ public class FantaModel extends AbstractProductModel {
                 this.getName(),
                 this.getPrice(),
                 this.getCategory(),
-                this.getcCalories(),
+                this.getKcalories(),
                 this.sizeInMl);
     }
 
-//    public FantaModel from(FantaModel model){
-//        return new FantaModel(
-//                model.getId(),
-//                model.getName(),
-//                model.getPrice(),
-//                model.getCategory(),
-//                model.getcCalories(),
-//                model.getSizeInMl());
-//    }
 
-//    public FantaModel() {
-//        super(8, "Fanta", 65, Category.DRINKS, 132);
-//        this.sizeInMl = 400;
-//    }
 
 
 }

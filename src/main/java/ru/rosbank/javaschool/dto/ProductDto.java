@@ -1,7 +1,9 @@
 package ru.rosbank.javaschool.dto;
 
+
 import ru.rosbank.javaschool.model.AbstractProductModel;
 import ru.rosbank.javaschool.model.Category;
+
 
 public class ProductDto {
     private int id;
@@ -14,6 +16,22 @@ public class ProductDto {
         this.name = name;
         this.category = category;
         this.prise = prise;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public int getPrise() {
+        return prise;
     }
 
     public static ProductDto from(AbstractProductModel model) {

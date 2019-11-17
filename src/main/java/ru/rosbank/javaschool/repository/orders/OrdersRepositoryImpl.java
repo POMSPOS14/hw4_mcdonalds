@@ -1,6 +1,7 @@
-package ru.rosbank.javaschool.repositoryForOrders;
+package ru.rosbank.javaschool.repository.orders;
 
-import ru.rosbank.javaschool.repositoryForProduct.ProductRepositoryImpl;
+import ru.rosbank.javaschool.exception.DataNotFoundException;
+import ru.rosbank.javaschool.repository.product.ProductRepositoryImpl;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -13,6 +14,14 @@ public class OrdersRepositoryImpl implements OrdersRepository {
     private Collection<Purchase> items = Collections.emptyList();
     private int nextId = 1;
 
+    public OrdersRepositoryImpl() {
+    }
+
+    @Override
+    public int getNextId() {
+        return nextId;
+    }
+
     public Collection<Purchase> getAll() {
         return Collections.unmodifiableCollection(items);
     }
@@ -22,12 +31,13 @@ public class OrdersRepositoryImpl implements OrdersRepository {
         return items.stream()
                 .filter(o -> o.getId() == id)
                 .findFirst();
+
     }
 
 
     @Override
-    public Purchase create(ProductRepositoryImpl repository, int... IdProduct) {
-        Purchase copy = new Purchase(nextId++, repository, IdProduct);
+    public Purchase create(ProductRepositoryImpl repository, int... idProduct) {
+        Purchase copy = new Purchase(nextId++, repository, idProduct);
         items = Stream.concat(items.stream(), Stream.of(copy))
                 .collect(Collectors.toList())
         ;
@@ -35,14 +45,12 @@ public class OrdersRepositoryImpl implements OrdersRepository {
     }
 
     @Override
-    //TODO fix exception
     public Purchase update(int id, ProductRepositoryImpl repository, int... product) {
         Purchase copy = new Purchase(id, repository, product);
-
         items.stream()
                 .filter(o -> o.getId() == copy.getId())
                 .findAny()
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(DataNotFoundException::new);
 
         items = items.stream()
                 .map(o -> o.getId() == copy.getId() ? copy : o)

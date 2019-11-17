@@ -1,10 +1,8 @@
 package ru.rosbank.javaschool.model;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import ru.rosbank.javaschool.dto.ProductDto;
 
 @Getter
 @NoArgsConstructor
@@ -16,14 +14,14 @@ public abstract class AbstractProductModel {
     private String name;
     private int price;
     private Category category;
-    private int cCalories;
+    private int kcalories;
 
-    public AbstractProductModel(int id, String name, int price, Category category, int cCalories) {
+    public AbstractProductModel(int id, String name, int price, Category category, int kcalories) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.category = category;
-        this.cCalories = cCalories;
+        this.kcalories = kcalories;
     }
 
     public int getId() {
@@ -42,8 +40,8 @@ public abstract class AbstractProductModel {
         return category;
     }
 
-    public int getcCalories() {
-        return cCalories;
+    public int getKcalories() {
+        return kcalories;
     }
 
     public AbstractProductModel withId(int id) {
@@ -57,7 +55,7 @@ public abstract class AbstractProductModel {
                 model.getName(),
                 model.getPrice(),
                 model.getCategory(),
-                model.getcCalories());
+                model.getKcalories());
     }
 
     public static AbstractProductModel from(CheeseburgerModel model) {
@@ -66,7 +64,7 @@ public abstract class AbstractProductModel {
                 model.getName(),
                 model.getPrice(),
                 model.getCategory(),
-                model.getcCalories(),
+                model.getKcalories(),
                 model.getMeat());
     }
 
@@ -76,7 +74,7 @@ public abstract class AbstractProductModel {
                 model.getName(),
                 model.getPrice(),
                 model.getCategory(),
-                model.getcCalories());
+                model.getKcalories());
     }
 
     public static AbstractProductModel from(ColaModel model) {
@@ -85,7 +83,7 @@ public abstract class AbstractProductModel {
                 model.getName(),
                 model.getPrice(),
                 model.getCategory(),
-                model.getcCalories(),
+                model.getKcalories(),
                 model.getSizeInMl());
     }
 
@@ -95,7 +93,7 @@ public abstract class AbstractProductModel {
                 model.getName(),
                 model.getPrice(),
                 model.getCategory(),
-                model.getcCalories());
+                model.getKcalories());
     }
 
     public static AbstractProductModel from(FantaModel model) {
@@ -104,7 +102,7 @@ public abstract class AbstractProductModel {
                 model.getName(),
                 model.getPrice(),
                 model.getCategory(),
-                model.getcCalories(),
+                model.getKcalories(),
                 model.getSizeInMl());
     }
 
@@ -114,7 +112,7 @@ public abstract class AbstractProductModel {
                 model.getName(),
                 model.getPrice(),
                 model.getCategory(),
-                model.getcCalories());
+                model.getKcalories());
     }
 
     public static AbstractProductModel from(RusticPotatoesModel model) {
@@ -123,7 +121,7 @@ public abstract class AbstractProductModel {
                 model.getName(),
                 model.getPrice(),
                 model.getCategory(),
-                model.getcCalories());
+                model.getKcalories());
     }
 
 

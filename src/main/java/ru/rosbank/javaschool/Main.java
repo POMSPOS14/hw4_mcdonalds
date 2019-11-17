@@ -1,10 +1,9 @@
 package ru.rosbank.javaschool;
 
 import ru.rosbank.javaschool.model.Category;
-import ru.rosbank.javaschool.model.CheesecakeModel;
 import ru.rosbank.javaschool.model.ColaModel;
-import ru.rosbank.javaschool.repositoryForOrders.OrdersRepositoryImpl;
-import ru.rosbank.javaschool.repositoryForProduct.ProductRepositoryImpl;
+import ru.rosbank.javaschool.repository.orders.OrdersRepositoryImpl;
+import ru.rosbank.javaschool.repository.product.ProductRepositoryImpl;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,8 +16,7 @@ public class Main {
         System.out.println(productRepository.readById(i).get().getName() + productRepository.readById(i).get().getId());
         OrdersRepositoryImpl ordersRepository = new OrdersRepositoryImpl();
         ordersRepository.create(productRepository,1,1);
-        System.out.println(ordersRepository.getAll().stream().findFirst());
-
+        System.out.println(ordersRepository.getAll());
 
 
 

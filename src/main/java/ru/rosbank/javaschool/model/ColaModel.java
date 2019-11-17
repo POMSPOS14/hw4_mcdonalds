@@ -4,8 +4,8 @@ public class ColaModel extends AbstractProductModel {
 
     private int sizeInMl;
 
-    public ColaModel(int id, String name, int price, Category category, int cCalories, int sizeInMl) {
-        super(id, name, price, category, cCalories);
+    public ColaModel(int id, String name, int price, Category category, int kcalories, int sizeInMl) {
+        super(id, name, price, category, kcalories);
         this.sizeInMl = sizeInMl;
     }
 
@@ -20,23 +20,10 @@ public class ColaModel extends AbstractProductModel {
                 this.getName(),
                 this.getPrice(),
                 this.getCategory(),
-                this.getcCalories(),
+                this.getKcalories(),
                 this.getSizeInMl());
     }
 
-//    public ColaModel from(ColaModel model){
-//        return new ColaModel(
-//                model.getId(),
-//                model.getName(),
-//                model.getPrice(),
-//                model.getCategory(),
-//                model.getcCalories(),
-//                model.getSizeInMl());
-//    }
 
-//    public ColaModel() {
-//        super(7, "Cola", 65, Category.DRINKS, 170);
-//        this.sizeInMl = 400;
-//    }
 
 }

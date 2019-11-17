@@ -2,8 +2,8 @@ package ru.rosbank.javaschool.model;
 
 public class DonatModel extends AbstractProductModel {
 
-    public DonatModel(int id, String name, int price, Category category, int cCalories) {
-        super(id, name, price, category, cCalories);
+    public DonatModel(int id, String name, int price, Category category, int kcalories) {
+        super(id, name, price, category, kcalories);
     }
 
 
@@ -14,25 +14,9 @@ public class DonatModel extends AbstractProductModel {
                 this.getName(),
                 this.getPrice(),
                 this.getCategory(),
-                this.getcCalories());
+                this.getKcalories());
     }
 
-//    public DonatModel(AbstractProductModel model){
-//        super(
-//                model.getId(),
-//                model.getName(),
-//                model.getPrice(),
-//                model.getCategory(),
-//                model.getcCalories()
-//            );
-//
-//
-//    }
 
-
-
-//    public DonatModel() {
-//        super(5, "Donat", 79, Category.DESSERTS, 263);
-//    }
 
 }

@@ -4,8 +4,8 @@ public class ChickenburgerModel extends AbstractProductModel {
 
     private String meat;
 
-    public ChickenburgerModel(int id, String name, int price, Category category, int cCalories, String meat) {
-        super(id, name, price, category, cCalories);
+    public ChickenburgerModel(int id, String name, int price, Category category, int kcalories, String meat) {
+        super(id, name, price, category, kcalories);
         this.meat = meat;
     }
 
@@ -20,22 +20,9 @@ public class ChickenburgerModel extends AbstractProductModel {
                 this.getName(),
                 this.getPrice(),
                 this.getCategory(),
-                this.getcCalories(),
+                this.getKcalories(),
                 this.getMeat());
     }
 
-//    public ChickenburgerModel from(ChickenburgerModel model){
-//        return new ChickenburgerModel(
-//                model.getId(),
-//                model.getName(),
-//                model.getPrice(),
-//                model.getCategory(),
-//                model.getcCalories(),
-//                model.getMeat());
-//    }
 
-//    public  ChickenburgerModel() {
-//        super(2," chickenburger",52,Category.SANDWICHES, 339);
-//        this.meat="chicken";
-//    }
 }

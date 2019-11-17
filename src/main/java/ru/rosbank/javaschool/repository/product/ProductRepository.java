@@ -1,4 +1,4 @@
-package ru.rosbank.javaschool.repositoryForProduct;
+package ru.rosbank.javaschool.repository.product;
 
 import ru.rosbank.javaschool.model.AbstractProductModel;
 

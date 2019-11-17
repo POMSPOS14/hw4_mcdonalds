@@ -1,9 +1,7 @@
-package ru.rosbank.javaschool.repositoryForProduct;
+package ru.rosbank.javaschool.repository.product;
 
+import ru.rosbank.javaschool.exception.DataNotFoundException;
 import ru.rosbank.javaschool.model.AbstractProductModel;
-import ru.rosbank.javaschool.model.Category;
-import ru.rosbank.javaschool.model.CheeseburgerModel;
-import ru.rosbank.javaschool.model.DonatModel;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -15,9 +13,16 @@ public class ProductRepositoryImpl implements ProductRepository {
     private Collection<AbstractProductModel> items = Collections.emptyList();
     private int nextId = 1;
 
-    public Collection<AbstractProductModel> getAll(){return Collections.unmodifiableCollection(items);}
+    public int getNextId() {
+        return nextId;
+    }
 
+    public ProductRepositoryImpl() {
+    }
 
+    public Collection<AbstractProductModel> getAll() {
+        return Collections.unmodifiableCollection(items);
+    }
 
     @Override
     public AbstractProductModel create(AbstractProductModel item) {
@@ -35,7 +40,7 @@ public class ProductRepositoryImpl implements ProductRepository {
                 .findFirst();
     }
 
-    //TODO пофиксить Exception
+
     @Override
     public AbstractProductModel update(AbstractProductModel item) {
         AbstractProductModel copy = AbstractProductModel.from(item);
@@ -43,7 +48,7 @@ public class ProductRepositoryImpl implements ProductRepository {
         items.stream()
                 .filter(o -> o.getId() == copy.getId())
                 .findAny()
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(DataNotFoundException::new);
 
         items = items.stream()
                 .map(o -> o.getId() == copy.getId() ? copy : o)

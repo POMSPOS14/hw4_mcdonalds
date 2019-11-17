@@ -1,12 +1,12 @@
-package ru.rosbank.javaschool.repositoryForOrders;
+package ru.rosbank.javaschool.repository.orders;
 
-import ru.rosbank.javaschool.dto.ProductDto;
 import ru.rosbank.javaschool.model.AbstractProductModel;
-import ru.rosbank.javaschool.repositoryForProduct.ProductRepository;
-import ru.rosbank.javaschool.repositoryForProduct.ProductRepositoryImpl;
+import ru.rosbank.javaschool.repository.product.ProductRepositoryImpl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -44,5 +44,13 @@ public class Purchase {
     }
 
 
+    public List<Integer> getIdAllProduct() {
+        List<Integer> result = new ArrayList<>();
+        for (AbstractProductModel item : items) {
+            result.add(item.getId());
+        }
+        return result;
+
+    }
 
 }
