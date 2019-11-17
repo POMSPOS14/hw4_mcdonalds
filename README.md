@@ -1,0 +1,2 @@
+[![Build Status](https://travis-ci.org/POMSPOS14/hw4_mcdonalds.svg?branch=master)](https://travis-ci.org/POMSPOS14/hw4_mcdonalds)
+[![codecov](https://codecov.io/gh/POMSPOS14/hw4_mcdonalds/branch/master/graph/badge.svg)](https://codecov.io/gh/POMSPOS14/hw4_mcdonalds)
