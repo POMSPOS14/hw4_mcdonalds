@@ -1,13 +1,11 @@
 package ru.rosbank.javaschool.model;
 
-public class FantaModel extends AbstractProductModel {
+public class DrinksModel extends AbstractProductModel {
 
     private int sizeInMl;
 
-    public FantaModel(int id, String name, int price, Category category, int kcalories, int sizeInMl) {
-
+    public DrinksModel(int id, String name, int price, Category category, int kcalories, int sizeInMl) {
         super(id, name, price, category, kcalories);
-
         this.sizeInMl = sizeInMl;
     }
 
@@ -17,15 +15,14 @@ public class FantaModel extends AbstractProductModel {
 
     @Override
     public AbstractProductModel withId(int id) {
-        return new FantaModel(
+        return new DrinksModel(
                 id,
                 this.getName(),
                 this.getPrice(),
                 this.getCategory(),
                 this.getKcalories(),
-                this.sizeInMl);
+                this.getSizeInMl());
     }
-
 
 
 

@@ -50,7 +50,7 @@ public abstract class AbstractProductModel {
 
 
     public static AbstractProductModel from(AbstractProductModel model) {
-        return new RusticPotatoesModel(
+        return new DessertsModel(
                 model.getId(),
                 model.getName(),
                 model.getPrice(),
@@ -58,8 +58,8 @@ public abstract class AbstractProductModel {
                 model.getKcalories());
     }
 
-    public static AbstractProductModel from(CheeseburgerModel model) {
-        return new CheeseburgerModel(
+    public static AbstractProductModel from(BurgerModel model) {
+        return new BurgerModel(
                 model.getId(),
                 model.getName(),
                 model.getPrice(),
@@ -68,8 +68,8 @@ public abstract class AbstractProductModel {
                 model.getMeat());
     }
 
-    public static AbstractProductModel from(CheesecakeModel model) {
-        return new CheesecakeModel(
+    public static AbstractProductModel from(DessertsModel model) {
+        return new DessertsModel(
                 model.getId(),
                 model.getName(),
                 model.getPrice(),
@@ -77,8 +77,8 @@ public abstract class AbstractProductModel {
                 model.getKcalories());
     }
 
-    public static AbstractProductModel from(ColaModel model) {
-        return new ColaModel(
+    public static AbstractProductModel from(DrinksModel model) {
+        return new DrinksModel(
                 model.getId(),
                 model.getName(),
                 model.getPrice(),
@@ -87,8 +87,27 @@ public abstract class AbstractProductModel {
                 model.getSizeInMl());
     }
 
-    public static AbstractProductModel from(DonatModel model) {
-        return new DonatModel(
+//    public static AbstractProductModel from(DonatModel model) {
+//        return new DonatModel(
+//                model.getId(),
+//                model.getName(),
+//                model.getPrice(),
+//                model.getCategory(),
+//                model.getKcalories());
+//    }
+
+//    public static AbstractProductModel from(FantaModel model) {
+//        return new FantaModel(
+//                model.getId(),
+//                model.getName(),
+//                model.getPrice(),
+//                model.getCategory(),
+//                model.getKcalories(),
+//                model.getSizeInMl());
+//    }
+
+    public static AbstractProductModel from(PotatoModel model) {
+        return new PotatoModel(
                 model.getId(),
                 model.getName(),
                 model.getPrice(),
@@ -96,33 +115,14 @@ public abstract class AbstractProductModel {
                 model.getKcalories());
     }
 
-    public static AbstractProductModel from(FantaModel model) {
-        return new FantaModel(
-                model.getId(),
-                model.getName(),
-                model.getPrice(),
-                model.getCategory(),
-                model.getKcalories(),
-                model.getSizeInMl());
-    }
-
-    public static AbstractProductModel from(FrenchFriesModel model) {
-        return new FrenchFriesModel(
-                model.getId(),
-                model.getName(),
-                model.getPrice(),
-                model.getCategory(),
-                model.getKcalories());
-    }
-
-    public static AbstractProductModel from(RusticPotatoesModel model) {
-        return new RusticPotatoesModel(
-                model.getId(),
-                model.getName(),
-                model.getPrice(),
-                model.getCategory(),
-                model.getKcalories());
-    }
+//    public static AbstractProductModel from(RusticPotatoesModel model) {
+//        return new RusticPotatoesModel(
+//                model.getId(),
+//                model.getName(),
+//                model.getPrice(),
+//                model.getCategory(),
+//                model.getKcalories());
+//    }
 
 
 }

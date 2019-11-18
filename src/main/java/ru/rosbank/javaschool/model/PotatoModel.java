@@ -1,14 +1,14 @@
 package ru.rosbank.javaschool.model;
 
-public class FrenchFriesModel extends AbstractProductModel {
+public class PotatoModel extends AbstractProductModel {
 
-    public FrenchFriesModel(int id, String name, int price, Category category, int kcalories) {
+    public PotatoModel(int id, String name, int price, Category category, int kcalories) {
         super(id, name, price, category, kcalories);
     }
 
     @Override
     public AbstractProductModel withId(int id) {
-        return new FrenchFriesModel(
+        return new PotatoModel(
                 id,
                 this.getName(),
                 this.getPrice(),

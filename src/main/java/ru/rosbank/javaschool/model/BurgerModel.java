@@ -5,13 +5,13 @@ import lombok.Getter;
 
 @Getter
 
-public class CheeseburgerModel extends AbstractProductModel {
+public class BurgerModel extends AbstractProductModel {
 
     private String meat;
 
 
 
-    public CheeseburgerModel(int id, String name, int price, Category category, int kcalories, String meat) {
+    public BurgerModel(int id, String name, int price, Category category, int kcalories, String meat) {
         super(id, name, price, category, kcalories);
         this.meat = meat;
     }
@@ -22,7 +22,7 @@ public class CheeseburgerModel extends AbstractProductModel {
 
     @Override
     public AbstractProductModel withId(int id) {
-        return new CheeseburgerModel(
+        return new BurgerModel(
                 id,
                 this.getName(),
                 this.getPrice(),
